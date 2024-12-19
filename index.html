@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Threat Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Real-Time Threat Detection System</h1>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <h2>System Activity Dashboard</h2>
+            <div id="activity-chart-container">
+                <canvas id="activity-chart"></canvas>
+            </div>
+        </section>
+
+        <section id="threat-log">
+            <h2>Threat Detection Log</h2>
+            <table id="threat-log-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Threat Type (STRIDE)</th>
+                        <th>Risk Score (DREAD)</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="threat-table-body">
+                    <!-- Rows will be populated dynamically -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="filters">
+            <h2>Filter Threats</h2>
+            <form id="filter-form">
+                <label for="threat-type">Threat Type:</label>
+                <select id="threat-type">
+                    <option value="">All</option>
+                    <option value="Spoofing">Spoofing</option>
+                    <option value="Tampering">Tampering</option>
+                    <option value="Repudiation">Repudiation</option>
+                    <option value="Information Disclosure">Information Disclosure</option>
+                    <option value="Denial of Service">Denial of Service</option>
+                    <option value="Elevation of Privilege">Elevation of Privilege</option>
+                </select>
+
+                <label for="risk-score">Minimum Risk Score:</label>
+                <input type="number" id="risk-score" min="0" max="50" step="1">
+
+                <button type="button" id="apply-filters">Apply Filters</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Real-Time Threat Detection System</p>
+    </footer>
+</body>
+</html>
